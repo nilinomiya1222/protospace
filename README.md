@@ -30,9 +30,6 @@ Things you may want to cover:
 ###アソシエーション
 
     has_many :prototypes
-    has_many :comments
-    has_many :likes
-
 
 ##prototypesテーブル
 ###カラム
@@ -70,7 +67,7 @@ Things you may want to cover:
 ###アソシエーション
 
     belongs_to :prototype
-    belongs_to :user
+    belongs_to :tag
 
 
 ##imagesテーブル
