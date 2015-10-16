@@ -39,6 +39,8 @@ Things you may want to cover:
     user_id
     copy
     concept
+    comments_count
+    likes_count
 
 ###アソシエーション
 
