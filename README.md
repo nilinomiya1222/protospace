@@ -12,8 +12,12 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
-usersテーブル
-  (カラム)
+
+#データベース構成
+
+##usersテーブル
+###カラム
+
     id
     name
     email
@@ -22,61 +26,87 @@ usersテーブル
     group
     profile
     works
-  (アソシエーション)
-    has_many :protos
+
+###アソシエーション
+
+    has_many :prototypes
     has_many :comments
     has_many :likes
-protosテーブル
-  (カラム)
+
+
+##prototypesテーブル
+###カラム
+
     id
     name
     user_id
     copy
     concept
-  (アソシエーション)
+
+###アソシエーション
+
     belongs_to :user
     has_many :images
     has_many :comments
     has_many :tags through :proto_tag
     has_many :likes
-tagsテーブル
-  (カラム)
+
+##tagsテーブル
+###カラム
+
     id
     tag_name
-  (アソシエーション)
-    has_many :protos through :proto_tag
-proto_tagテーブル
-  (カラム)
+
+###アソシエーション
+
+    has_many :prototypes through :proto_tag
+
+##proto_tagテーブル
+###カラム
+
     proto_id
     tag_id
-  (アソシエーション)
-    belongs_to :proto
+
+###アソシエーション
+
+    belongs_to :prototype
     belongs_to :user
-imagesテーブル
-  (カラム)
+
+
+##imagesテーブル
+###カラム
+
     id
     type(メインの大きな画像か小さな画像かを指定します)
     image
     proto_id
-  (アソシエーション)
-    belongs_to :proto
-commentsテーブル
-  (カラム)
+
+###アソシエーション
+    belongs_to :prototype
+
+##commentsテーブル
+###カラム
+
     id
     user_id
     proto_id
     text
-  (アソシエーション)
+
+###アソシエーション
     belongs_to :user
-    belongs_to :proto
-likesテーブル
-  (カラム)
+    belongs_to :prototype
+
+##likesテーブル
+###カラム
+
     id
     proto_id
     user_id
-  (アソシエーション)
+
+###アソシエーション
+
     belongs_to :user
-    belongs_to :proto
+    belongs_to :prototype
 
 
 
