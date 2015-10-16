@@ -56,21 +56,6 @@ Things you may want to cover:
     id
     tag_name
 
-###アソシエーション
-
-    has_many :prototypes through :proto_tag
-
-##proto_tagテーブル
-###カラム
-
-    proto_id
-    tag_id
-
-###アソシエーション
-
-    belongs_to :prototype
-    belongs_to :tag
-
 
 ##imagesテーブル
 ###カラム
