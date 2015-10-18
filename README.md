@@ -30,6 +30,7 @@ Things you may want to cover:
 ###アソシエーション
 
     has_many :prototypes
+    has_many :likes
 
 ##prototypesテーブル
 ###カラム
@@ -47,7 +48,6 @@ Things you may want to cover:
     belongs_to :user
     has_many :images
     has_many :comments
-    has_many :tags through :proto_tag
     has_many :likes
 
 ##tagsテーブル
@@ -72,7 +72,6 @@ Things you may want to cover:
 ###カラム
 
     id
-    user_id
     proto_id
     text
 
@@ -85,7 +84,6 @@ Things you may want to cover:
 
     id
     proto_id
-    user_id
 
 ###アソシエーション
 
