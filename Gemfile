@@ -47,4 +47,3 @@ gem 'bootstrap-sass'
 
 gem 'haml-rails'
 gem 'erb2haml'
-gem 'sass-rails', '~> 5.0.3'
