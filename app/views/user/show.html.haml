@@ -2,8 +2,8 @@
   %header.user-nav
     .media
       .media-left
-        %a{href: "#"}
-          %img.media-object{ alt: "64x64", data: { holder: { rendered: "true", { src: "holder.js/64x64"}}}, src: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGRlZnMvPjxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjEzLjQ2MDkzNzUiIHk9IjMyIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9nPjwvc3ZnPg==", style: "width: 64px; height: 64px;" }/
+        = link_to image_tag("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGRlZnMvPjxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjEzLjQ2MDkzNzUiIHk9IjMyIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9nPjwvc3ZnPg==",style: "width: 64px; height: 64px;", alt: "64x64", data: { holder: { rendered: "true" }, src: "holder.js/64x64" }), root_path
+          %img.media-object{ alt: "64x64", data: { holder: { rendered: "true" }, src: "holder.js/64x64" }, src: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGRlZnMvPjxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjEzLjQ2MDkzNzUiIHk9IjMyIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9nPjwvc3ZnPg==", style: "width: 64px; height: 64px;" }/
       .media-body
         %h4#top-aligned-media.media-heading
           Top aligned media
@@ -32,9 +32,9 @@
                 Apr 26
             %ul.proto-tag-list.list-inline
               %li 
-                = link_to "iPad", user_path, class: "btn btn-default"
+                = link_to "iPad", user_show_path, class: "btn btn-default"
               %li 
-                = link_to "wireframe", user_path, class: "btn btn-default"
+                = link_to "wireframe", user_show_path, class: "btn btn-default"
     .col-sm-4.col-md-3.proto-content
       .thumbnail
         = link_to "" do
@@ -46,9 +46,9 @@
                 Apr 26
             %ul.proto-tag-list.list-inline
               %li 
-                = link_to "iPad", user_path, class: "btn btn-default"
+                = link_to "iPad", user_show_path, class: "btn btn-default"
               %li 
-                = link_to "wireframe", user_path, class: "btn btn-default"
+                = link_to "wireframe", user_show_path, class: "btn btn-default"
     .col-sm-4.col-md-3.proto-content
       .thumbnail
         = link_to "" do
@@ -60,9 +60,9 @@
                 Apr 26
             %ul.proto-tag-list.list-inline
               %li 
-                = link_to "iPad", user_path, class: "btn btn-default"
+                = link_to "iPad", user_show_path, class: "btn btn-default"
               %li 
-                = link_to "wireframe", user_path, class: "btn btn-default"
+                = link_to "wireframe", user_show_path, class: "btn btn-default"
     .col-sm-4.col-md-3.proto-content
       .thumbnail
         = link_to "" do
@@ -74,9 +74,9 @@
                 Apr 26
             %ul.proto-tag-list.list-inline
               %li 
-                = link_to "iPad", user_path, class: "btn btn-default"
+                = link_to "iPad", user_show_path, class: "btn btn-default"
               %li 
-                = link_to "wireframe", user_path, class: "btn btn-default"
+                = link_to "wireframe", user_show_path, class: "btn btn-default"
     .col-sm-4.col-md-3.proto-content
       .thumbnail
         = link_to "" do
@@ -88,9 +88,9 @@
                 Apr 26
             %ul.proto-tag-list.list-inline
               %li 
-                = link_to "iPad", user_path, class: "btn btn-default"
+                = link_to "iPad", user_show_path, class: "btn btn-default"
               %li 
-                = link_to "wireframe", user_path, class: "btn btn-default"
+                = link_to "wireframe", user_show_path, class: "btn btn-default"
     .col-sm-4.col-md-3.proto-content
       .thumbnail
         = link_to "" do
@@ -102,9 +102,9 @@
                 Apr 26
             %ul.proto-tag-list.list-inline
               %li 
-                = link_to "iPad", user_path, class: "btn btn-default"
+                = link_to "iPad", user_show_path, class: "btn btn-default"
               %li 
-                = link_to "wireframe", user_path, class: "btn btn-default"
+                = link_to "wireframe", user_show_path, class: "btn btn-default"
     .col-sm-4.col-md-3.proto-content
       .thumbnail
         %a{href: ""}
@@ -116,9 +116,9 @@
                 Apr 26
             %ul.proto-tag-list.list-inline
               %li 
-                = link_to "iPad", user_path, class: "btn btn-default"
+                = link_to "iPad", user_show_path, class: "btn btn-default"
               %li 
-                = link_to "wireframe", user_path, class: "btn btn-default"
+                = link_to "wireframe", user_show_path, class: "btn btn-default"
     .col-sm-4.col-md-3.proto-content
       .thumbnail
         = link_to "" do
@@ -130,9 +130,9 @@
                 Apr 26
             %ul.proto-tag-list.list-inline
               %li 
-                = link_to "iPad", user_path, class: "btn btn-default"
+                = link_to "iPad", user_show_path, class: "btn btn-default"
               %li 
-                = link_to "wireframe", user_path, class: "btn btn-default"
+                = link_to "wireframe", user_show_path, class: "btn btn-default"
                 
 .text-center
   %ul.pagination
@@ -144,13 +144,13 @@
         1
         %span.sr-only (current)
     %li
-      = link_to "2", user_path
+      = link_to "2", user_show_path
     %li
-      = link_to "3", user_path
+      = link_to "3", user_show_path
     %li
-      = link_to "4", user_path
+      = link_to "4", user_show_path
     %li
-      = link_to "5", user_path
+      = link_to "5", user_show_path
     %li
       %a{"aria-label" => "Next", :href => "#"}
         %span{ aria: { hidden: "true"}} »
