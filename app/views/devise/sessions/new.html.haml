@@ -5,8 +5,7 @@
       = f.label "Email address", class: "sr-only", for: "inputEmail"
       = f.email_field :email, autofocus: "", placeholder: "Email address", required: "", id: "inputEmail", class: "form-control"
       = f.label "Password", class: "sr-only", for: "inputPassword"
-      %input#inputPassword.form-control{ placeholder: "Password", required: "", type: "password" }/
-      = f.email_field :password, placeholder: "Password", required: "", id: "inputPassword", class: "form-control"
+      = f.password_field :password, placeholder: "Password", required: "", id: "inputPassword", class: "form-control"
       .checkbox
         %label
           %input{ type: "checkbox", value: "remember-me" }/
