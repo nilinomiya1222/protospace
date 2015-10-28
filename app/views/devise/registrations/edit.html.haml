@@ -7,7 +7,7 @@
           = devise_error_messages!
           .user-name_image.row
             .user-name.col-md-10
-              = f.text_field :text, placeholder: "Username", autofocus: true
+              = f.text_field :name, placeholder: "Username", autofocus: true
             .user-image.col-md-2{style: 'background-image: url(#{User.avatar});'}
               = f.button "Add image", class: "btn btn-primary"
               = f.file_field :avatar
