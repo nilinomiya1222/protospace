@@ -1,0 +1,35 @@
+.container.proto-new{ action: "" }
+  = form_for @prototype do |f|
+    .col-md-8.col-md-offset-2
+      %header.row.user-nav.row
+        .col-md-12
+          = f.text_field :name, autofocus: true, placeholder: "Title", class: "proto-new-title"
+      .row
+        .col-md-12
+          .cover-image-upload
+            = f.file_field :image
+        .col-md-12
+          %ul.proto-sub-list.list-group
+            %li.list-group-item.col-md-4
+              .image-upload
+                = f.file_field :image
+            %li.list-group-item.col-md-4
+              .image-upload
+                = f.file_field :image
+            %li.list-group-item.col-md-4
+              .image-upload-plus
+                %span +
+      .row.proto-description
+        .col-md-12
+          = f.text_field :copy, placeholder: "Catch Copy"
+        .col-md-12
+          = f.text_area :concept, cols: "30", rows: "4", placeholder: "Concept"
+        .col-md-12
+          %h4 Tag List
+          .row
+            .col-md-3
+            .col-md-3
+            .col-md-3
+      .row.text-center.proto-btn
+        = f.submit "Publish", class: "btn btn-lg btn-primary btn-block"
+        
