@@ -1,2 +1,0 @@
-class PrototypeController < ApplicationController
-end
