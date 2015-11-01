@@ -8,14 +8,14 @@ class PrototypesController < ApplicationController
   end
 
   def create
-    Prototype.create(name: prototype_params[:name], copy: prototype_params[:copy], concept: prototype_params[:concept], user_id: current_user.id)
+    Prototype.create(name: prototype_params[:name], image:prototype_params[:image], copy: prototype_params[:copy], concept: prototype_params[:concept], user_id: current_user.id)
     redirect_to controller: :top, action: :index
   end
 
   private
 
   def prototype_params
-    params.require(:prototype).permit(:name, :copy, :concept, :user_id)
+    params.require(:prototype).permit(:name, :image, :copy, :concept, :user_id)
   end
 
 end
