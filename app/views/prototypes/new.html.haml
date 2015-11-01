@@ -6,19 +6,31 @@
           = f.text_field :name, autofocus: true, placeholder: "Title", class: "proto-new-title"
       .row
         .col-md-12
-          .cover-image-upload
-            = f.file_field :image
-        .col-md-12
-          %ul.proto-sub-list.list-group
-            %li.list-group-item.col-md-4
-              .image-upload
-                = f.file_field :image
-            %li.list-group-item.col-md-4
-              .image-upload
-                = f.file_field :image
-            %li.list-group-item.col-md-4
-              .image-upload-plus
-                %span +
+          = f.fields_for :images do |images_form|
+            .cover-image-upload
+              = images_form.file_field :image
+              = images_form.hidden_field :status, value: "main"
+              = images_form.hidden_field :prototype_id, value: @prototype.id
+              = images_form.hidden_field :image_cache
+            .col-md-12
+              %ul.proto-sub-list.list-group
+                %li.list-group-item.col-md-4
+                  = f.fields_for :images do |images_form|
+                    .image-upload
+                      = images_form.file_field :image
+                      = images_form.hidden_field :status, value: "sub"
+                      = images_form.hidden_field :prototype_id, value: @prototype.id
+                      = images_form.hidden_field :image_cache
+                %li.list-group-item.col-md-4
+                  = f.fields_for :images do |images_form|
+                    .image-upload
+                      = images_form.file_field :image
+                      = images_form.hidden_field :status, value: "sub"
+                      = images_form.hidden_field :prototype_id, value: @prototype.id
+                      = images_form.hidden_field :image_cache
+                %li.list-group-item.col-md-4
+                  .image-upload-plus
+                    %span +
       .row.proto-description
         .col-md-12
           = f.text_field :copy, placeholder: "Catch Copy"
@@ -28,8 +40,11 @@
           %h4 Tag List
           .row
             .col-md-3
+              %input{ type: "text", placeholder: "Web Design" }/
             .col-md-3
+              %input{ type: "text", placeholder: "UI" }/
             .col-md-3
+              %input{ type: "text", placeholder: "Application" }/
       .row.text-center.proto-btn
         = f.submit "Publish", class: "btn btn-lg btn-primary btn-block"
         
