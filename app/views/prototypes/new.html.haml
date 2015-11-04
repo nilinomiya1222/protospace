@@ -1,4 +1,4 @@
-.container.proto-new{ action: "" }
+.container.proto-new
   = form_for @prototype do |f|
     .col-md-8.col-md-offset-2
       %header.row.user-nav.row
@@ -8,26 +8,15 @@
         .col-md-12
           = f.fields_for :images do |images_form|
             .cover-image-upload
-              = images_form.file_field :image
-              = images_form.hidden_field :status, value: "main"
-              = images_form.hidden_field :prototype_id, value: @prototype.id
-              = images_form.hidden_field :image_cache
+              = images_form.file_field :main
             .col-md-12
               %ul.proto-sub-list.list-group
                 %li.list-group-item.col-md-4
-                  = f.fields_for :images do |images_form|
-                    .image-upload
-                      = images_form.file_field :image
-                      = images_form.hidden_field :status, value: "sub"
-                      = images_form.hidden_field :prototype_id, value: @prototype.id
-                      = images_form.hidden_field :image_cache
+                  .image-upload
+                    = images_form.file_field :sub
                 %li.list-group-item.col-md-4
-                  = f.fields_for :images do |images_form|
-                    .image-upload
-                      = images_form.file_field :image
-                      = images_form.hidden_field :status, value: "sub"
-                      = images_form.hidden_field :prototype_id, value: @prototype.id
-                      = images_form.hidden_field :image_cache
+                  .image-upload
+                    = images_form.file_field :sub1
                 %li.list-group-item.col-md-4
                   .image-upload-plus
                     %span +
