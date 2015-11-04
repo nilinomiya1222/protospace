@@ -6,7 +6,7 @@ class CreatePrototypes < ActiveRecord::Migration
       t.text :copy
       t.text :concept
 
-      t.timestamps null: false
+      t.timestamps
     end
   end
 end
