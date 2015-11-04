@@ -13,14 +13,24 @@ class PrototypesController < ApplicationController
   end
 
   def create
-    Prototype.create(prototype_params)
-    redirect_to controller: :prototypes, action: :index
+    @prototype = Prototype.create(prototype_params)
+    @prototype.create_images(image_params)
+    if @prototype.save
+      redirect_to :root, flash: {success: 'プロトタイプが投稿されました'}
+    else
+      redirect_to render :new, flash: {error: '投稿に失敗しました'}
+    end
   end
 
   private
-
   def prototype_params
-    params.require(:prototype).permit(:name, :copy, :concept, images_attributes: [:image, :status, :prototype_id]).merge(user_id: current_user.id)
+    params.require(:prototype).permit(:name, :copy, :concept).merge(user_id: current_user.id)
   end
+
+  def image_params
+    params.require(:prototype).require(:images_attributes).require("0")
+  end
+
+
 
 end
