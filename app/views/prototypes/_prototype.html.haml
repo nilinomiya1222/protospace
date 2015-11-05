@@ -3,7 +3,7 @@
     = link_to image_tag(prototype.images[0][:image]), prototype_path(prototype)
     .caption
       %h3
-        #{prototype.name}
+        = prototype.name
       .proto-meta
         .proto-user
           = link_to "by #{prototype.user.name}", root_path
