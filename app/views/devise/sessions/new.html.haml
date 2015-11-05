@@ -1,7 +1,7 @@
 .container
-  .form-signin
-    %h2.form-signin-heading Please sign in
-    = form_for(resource, as: resource_name, url: user_session_path(resource_name)) do |f|
+  = form_for(resource, as: resource_name, url: user_session_path(resource_name)) do |f|
+    .form-signin
+      %h2.form-signin-heading Please sign in
       = f.label "Email address", class: "sr-only", for: "inputEmail"
       = f.email_field :email, autofocus: "", placeholder: "Email address", required: "", id: "inputEmail", class: "form-control"
       = f.label "Password", class: "sr-only", for: "inputPassword"
