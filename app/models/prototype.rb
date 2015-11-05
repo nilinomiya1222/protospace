@@ -11,11 +11,7 @@ class Prototype < ActiveRecord::Base
 
   def create_images(image_params)
     image_params.each do |key, value|
-      if key == "main"
-        images.create(image: value, status: 0)
-      else
-        images.create(image: value, status: 1)
-      end
+      if key == "main" ? images.create(image: value, status: 0) : images.create(image: value, status: 1)
     end
   end
 
