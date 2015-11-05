@@ -15,7 +15,7 @@ class PrototypesController < ApplicationController
   def create
     @prototype = Prototype.create(prototype_params)
     @prototype.create_images(image_params)
-    if @prototype.save ? redirect_to :root, flash: {success: 'プロトタイプが投稿されました'} : redirect_to render :new, flash: {error: '投稿に失敗しました'}
+    if @prototype.save ? redirect_to :root, flash: {success: 'プロトタイプが投稿されました'} : render :new, flash: {error: '投稿に失敗しました'}
   end
 
   private
