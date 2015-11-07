@@ -22,6 +22,27 @@ class PrototypesController < ApplicationController
     if @prototype.save ? redirect_to :root, flash: {success: 'プロトタイプが投稿されました'} : render :new, flash: {error: '投稿に失敗しました'}
   end
 
+  def edit
+    @prototype = Prototype.find(params[:id])
+  end
+
+  def destroy
+    prototype = Prototype.find(params[:id])
+    if prototype.user_id == current_user.id
+      prototype.destroy
+    end
+    redirect_to :root, flash: {success: 'プロトタイプの削除に成功しました'}
+  end
+
+  def update
+    @prototype = Prototype.find(params[:id])
+    if @prototype.user_id == current_user.id
+      @prototype.update(prototype_params)
+      @prototype.update_images(update_image_params)
+    end
+    redirect_to :root, flash: {success: 'プロトタイプの編集に成功しました'}
+  end
+
   private
   def prototype_params
     params.require(:prototype).permit(:name, :copy, :concept).merge(user_id: current_user.id)
@@ -29,6 +50,14 @@ class PrototypesController < ApplicationController
 
   def image_params
     params.require(:prototype).require(:images_attributes).require("0")
+  end
+
+  def update_image_params
+    params.require(:prototype).require(:images_attributes)
+  end
+
+  def move_to_index
+    redirect_to :root unless user_signed_in?
   end
 
 
