@@ -15,4 +15,12 @@ class Prototype < ActiveRecord::Base
     end
   end
 
+  def update_images(image_params)
+    image_params.each do |key, value|
+      images.each do |image|
+        key == "0" ? image.update(image: value.values[0], status: 0) : image.update(image: value.values[0], status: 1)
+      end
+    end
+  end
+
 end
