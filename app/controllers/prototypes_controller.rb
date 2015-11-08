@@ -52,11 +52,4 @@ class PrototypesController < ApplicationController
   def update_image_params
     params.require(:prototype).require(:images_attributes)
   end
-
-  def move_to_index
-    redirect_to :root unless user_signed_in?
-  end
-
-
-
 end
