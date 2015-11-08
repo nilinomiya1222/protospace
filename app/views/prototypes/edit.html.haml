@@ -3,7 +3,7 @@
     .col-md-8.col-md-offset-2
       %header.row.user-nav.row
         .col-md-12
-          = f.text_field :name, autofocus: true, placeholder: "Title", class: "proto-new-title"
+          = f.text_field :name, autofocus: true, placeholder: 'Title', class: 'proto-new-title'
       .row
         .col-md-12
           = f.fields_for :images, @prototype.images.main do |images_form|
