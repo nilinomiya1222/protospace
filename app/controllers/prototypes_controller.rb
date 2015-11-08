@@ -27,15 +27,15 @@ class PrototypesController < ApplicationController
     prototype = Prototype.find(params[:id])
     if prototype.user_id == current_user.id
       prototype.destroy
+      redirect_to :root, success: 'プロトタイプの削除に成功しました'
     end
-    redirect_to :root, flash: {success: 'プロトタイプの削除に成功しました'}
   end
 
   def update
     @prototype = Prototype.find(params[:id])
     if @prototype.user_id == current_user.id
       @prototype.update(prototype_params)
-      @prototype.update_images(update_image_params)
+      @prototype.update_images(image_params)
     end
     redirect_to :root, flash: {success: 'プロトタイプの編集に成功しました'}
   end
