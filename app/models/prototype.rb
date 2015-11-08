@@ -11,14 +11,14 @@ class Prototype < ActiveRecord::Base
 
   def create_images(image_params)
     image_params.each do |key, value|
-      if key == "main" ? images.create(image: value, status: 0) : images.create(image: value, status: 1)
+      key == "main" ? images.create(image: value, status: 0) : images.create(image: value, status: 1)
     end
   end
 
   def update_images(image_params)
     image_params.each do |key, value|
       images.each do |image|
-        key == "0" ? image.update(image: value.values[0], status: 0) : image.update(image: value.values[0], status: 1)
+        key == "main" ? image.update(image: value, status: 0) : image.update.sub(image: value, status: 1)
       end
     end
   end
