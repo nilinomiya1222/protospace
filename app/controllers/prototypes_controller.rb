@@ -49,7 +49,4 @@ class PrototypesController < ApplicationController
     params.require(:prototype).require(:images_attributes).require("0")
   end
 
-  def update_image_params
-    params.require(:prototype).require(:images_attributes)
-  end
 end
