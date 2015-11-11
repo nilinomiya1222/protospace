@@ -35,7 +35,7 @@ class PrototypesController < ApplicationController
     @prototype = Prototype.find(params[:id])
     if @prototype.user_id == current_user.id
       @prototype.update(prototype_params)
-      @prototype.update_images(image_params)
+      @prototype.update_images(update_image_params)
     end
     redirect_to :root, flash: {success: 'プロトタイプの編集に成功しました'}
   end
@@ -49,4 +49,7 @@ class PrototypesController < ApplicationController
     params.require(:prototype).require(:images_attributes).require("0")
   end
 
+  def update_image_params
+    params.require(:prototype).require(:images_attributes)
+  end
 end
