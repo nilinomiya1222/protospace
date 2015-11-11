@@ -16,9 +16,10 @@ class Prototype < ActiveRecord::Base
   end
 
   def update_images(image_params)
-    ids = 2
+    i = 0
     image_params.each do |key, value|
-      key == "sub" ? images.update(ids, image: value, status: "sub") : images[0].update(image: value, status: "main")
+      key != "0" ? images[i].update(image: value[:sub], status: "sub") : images[0].update(image: value[:main], status: "main")
+      i += 1
     end
   end
 
