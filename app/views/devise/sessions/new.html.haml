@@ -1,5 +1,5 @@
-.container
-  = form_for(resource, as: resource_name, url: user_session_path(resource_name)) do |f|
+= form_for(resource, as: resource_name, url: new_user_session_path) do |f|
+  .container
     .form-signin
       %h2.form-signin-heading Please sign in
       = f.label "Email address", class: "sr-only", for: "inputEmail"
