@@ -45,8 +45,9 @@
       Comments
       %span.num (#{@prototype.comments.count}) 
     .col-md-8
-      = render @prototype.comments
-      = form_for @comment, html: { class: 'form-inline' } do |f|
+      #comments
+        = render @prototype.comments
+      = form_for @comment, html: { class: 'form-inline' }, remote: true do |f|
         %h4 Write a comment
         .row
           .form-group.col-md-10
