@@ -43,7 +43,8 @@
   .row.proto-comments
     %h4.col-md-12
       Comments
-      %span.num (#{@prototype.comments.count}) 
+      %span.num
+        = @prototype.comments.count
     .col-md-8
       #comments
         = render @prototype.comments
