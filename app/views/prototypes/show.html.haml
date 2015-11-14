@@ -36,15 +36,16 @@
     .col-md-3
       %h4 Tag List
       %ul.proto-tag-list.list-inline
-        %li 
+        %li
           = link_to "iPad", root_path, class: "btn btn-default"
-        %li 
+        %li
           = link_to "wireframe", root_path, class: "btn btn-default"
   .row.proto-comments
     %h4.col-md-12
-      Comments
-      %span.num
+      Comments(
+      %span.num<>
         = @prototype.comments.count
+      )
     .col-md-8
       #comments
         = render @prototype.comments
