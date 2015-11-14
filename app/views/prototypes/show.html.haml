@@ -42,10 +42,8 @@
           = link_to "wireframe", root_path, class: "btn btn-default"
   .row.proto-comments
     %h4.col-md-12
-      Comments(
-      %span.num<>
-        = @prototype.comments.count
-      )
+      Comments
+      %span.num (#{@prototype.comments.count})
     .col-md-8
       #comments
         = render @prototype.comments
