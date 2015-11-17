@@ -25,4 +25,7 @@ class Prototype < ActiveRecord::Base
     end
   end
 
+  def like_user(prototype,user)
+    Like.exists?(prototype_id: prototype.id, user_id: user.id)
+  end
 end
