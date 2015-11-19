@@ -25,7 +25,7 @@ class Prototype < ActiveRecord::Base
     end
   end
 
-  def like_blank(current_user)
+  def like_blank?(current_user)
     likes.find_by(user_id: current_user.id).blank?
   end
 end
