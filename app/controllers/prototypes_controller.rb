@@ -1,7 +1,7 @@
 class PrototypesController < ApplicationController
 
   def index
-    @prototypes = Prototype.includes(:user).order(created_at: :DESC).page(params[:page])
+    @prototypes = Prototype.includes(:user).order(likes_count: :DESC).page(params[:page])
   end
 
   def show
@@ -39,6 +39,11 @@ class PrototypesController < ApplicationController
       @prototype.update_images(update_image_params)
     end
     redirect_to :root, flash: {success: 'プロトタイプの編集に成功しました'}
+  end
+
+  def newest
+    @prototypes = Prototype.includes(:user).order(created_at: :DESC).page(params[:page])
+    render action: :index
   end
 
   private
