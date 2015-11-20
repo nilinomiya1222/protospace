@@ -4,6 +4,7 @@ class Prototype < ActiveRecord::Base
   belongs_to :user
   has_many :images
   has_many :comments
+  has_many :likes
 
   accepts_nested_attributes_for :images, reject_if: proc { |attributes| attributes['image'].blank? }
 
@@ -24,4 +25,7 @@ class Prototype < ActiveRecord::Base
     end
   end
 
+  def like_blank?(current_user)
+    likes.find_by(user_id: current_user.id).blank?
+  end
 end

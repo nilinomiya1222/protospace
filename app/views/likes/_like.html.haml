@@ -1,0 +1,13 @@
+- unless @prototype.like_blank?(current_user)
+  = button_tag class: 'btn btn-default' do
+    = link_to image_tag('icon_heart_red.svg'), like_path(prototype_id: @prototype.id, id:@prototype.id), method: :delete, remote: true
+    Like
+    %span#likes_count
+      = @prototype.likes.count
+- else
+  = button_tag class: 'btn btn-default' do
+    = link_to image_tag('icon_heart.svg'), likes_path(prototype_id: @prototype.id), method: :post, remote: true
+    Like
+    %span#likes_count
+      = @prototype.likes.count
+

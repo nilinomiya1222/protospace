@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   # Association
   has_many :prototypes
+  has_many :likes
 
   mount_uploader :avatar, AvatarUploader
 end
