@@ -43,7 +43,6 @@ class PrototypesController < ApplicationController
 
   def newest
     @prototypes = Prototype.includes(:user).order(created_at: :DESC).page(params[:page])
-    render action: :index
   end
 
   private
