@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :prototypes do
     collection do
       get 'newest'
+      get 'popular'
     end
   end
   resources :users, only:[:show]
