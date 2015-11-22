@@ -6,6 +6,8 @@ class Prototype < ActiveRecord::Base
   has_many :comments
   has_many :likes
 
+  acts_as_taggable
+
   accepts_nested_attributes_for :images, reject_if: proc { |attributes| attributes['image'].blank? }
 
   #Default Paginatiton
