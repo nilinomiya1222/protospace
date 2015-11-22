@@ -7,9 +7,9 @@
     .row
       %ul.nav.nav-pills.col-lg-11
         %li.sort_tab.popular.active{ role: 'presentation' }
-          = link_to 'Popular PROTO', root_path
+          = link_to 'Popular PROTO', popular_prototypes_path, remote: true
         %li.sort_tab.newest{ role: 'presentation' }
-          = link_to 'Newest PROTO', newest_prototypes_path
+          = link_to 'Newest PROTO', newest_prototypes_path, remote: true
       = button_tag 'View Tags', class: 'btn btn-default col-lg-1'
 
 .container.proto-list
@@ -20,3 +20,4 @@
   %ul.pagination
     %li.disabled
       = paginate(@prototypes)
+
