@@ -1,0 +1,6 @@
+$('.proto-list .row').html(
+  '<%= j(render partial: 'prototypes/prototype', collection: @prototypes) %>'
+);
+$("li.sort_tab.popular").addClass("active");
+$("li.sort_tab.newest").removeClass("active");
+
