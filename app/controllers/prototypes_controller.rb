@@ -45,6 +45,10 @@ class PrototypesController < ApplicationController
     @prototypes = Prototype.includes(:user).order(created_at: :DESC).page(params[:page])
   end
 
+  def popular
+    @prototypes = Prototype.includes(:user).order(likes_count: :DESC).page(params[:page])
+  end
+
   private
   def prototype_params
     params.require(:prototype).permit(:name, :copy, :concept).merge(user_id: current_user.id)
