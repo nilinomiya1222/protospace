@@ -4,6 +4,7 @@ class TagsController < ApplicationController
   end
 
   def show
-    @prototype = Prototype.tagged_with(params[:tag_name])
+    @prototypes = Prototype.tagged_with(params[:tag_name]).page(params[:page])
+    render 'prototypes/index'
   end
 end
