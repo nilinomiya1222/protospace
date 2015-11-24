@@ -3,14 +3,14 @@
     .col-md-6
       .media
         .media-left
-          = link_to image_tag(@prototype.user.avatar, alt: "64x64", data: { holder: { rendered: "true"}, src: "holder.js/64x64"}, style: "width: 64px; height: 64px;", class: "media-object"), root_path
+          = link_to image_tag(@prototype.user.avatar, alt: '64x64', data: { holder: { rendered: 'true'}, src: 'holder.js/64x64'}, style: 'width: 64px; height: 64px;', class: 'media-object'), root_path
         .media-body
           %h4#top-aligned-media.media-heading
             = @prototype.name
           .proto-user
             = link_to "by #{@prototype.user.name}", ''
             %span.degree
-              = @prototype.user.group + " " + @prototype.user.works
+              = @prototype.user.group + ' ' + @prototype.user.works
     .col-md-6.text-right
       #like_form
         = render partial: 'likes/like'
@@ -34,10 +34,6 @@
     .col-md-3
       %h4 Tag List
       %ul.proto-tag-list.list-inline
-        %li
-          = link_to "iPad", root_path, class: "btn btn-default"
-        %li
-          = link_to "wireframe", root_path, class: "btn btn-default"
         - @prototype.tag_list.each do |tag|
           %li
             = link_to tag, tag_path(tag), class: 'btn btn-default'
@@ -53,7 +49,7 @@
           %h4 Write a comment
           .row
             .form-group.col-md-10
-              = f.text_area :text, placeholder: "Your comments", rows: "3", class: 'form-control'
+              = f.text_area :text, placeholder: 'Your comments', rows: '3', class: 'form-control'
               = f.hidden_field :prototype_id, value: @prototype.id
             .form-group.col-md-2
-              = f.submit "Comment", class: "btn btn-primary"
+              = f.submit 'Comment', class: 'btn btn-primary'
