@@ -4,7 +4,7 @@
       %span.icon-bar
       %span.icon-bar
       %span.icon-bar
-    = link_to image_tag("logo.png", alt: "PROTO TYPE - SHARE THE PROTOTYPE", height: "36px"), root_path
+    = link_to image_tag("logo.png", alt: "PROTO TYPE - SHARE THE PROTOTYPE", height: "36px"), root_path, class: 'navbar-brand'
     .navbar-collapse.collapse.navbar-responsive-collapse
       - unless user_signed_in?
         %ul.nav.navbar-nav.navbar-right
