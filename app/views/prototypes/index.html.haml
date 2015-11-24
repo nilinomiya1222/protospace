@@ -10,7 +10,7 @@
           = link_to 'Popular PROTO', popular_prototypes_path, remote: true
         %li.sort_tab.newest{ role: 'presentation' }
           = link_to 'Newest PROTO', newest_prototypes_path, remote: true
-      = button_tag 'View Tags', class: 'btn btn-default col-lg-1'
+      = button_to 'View Tags', tags_path,method: :get, class: 'btn btn-default col-lg-1 view_tag'
 
 .container.proto-list
   .row
