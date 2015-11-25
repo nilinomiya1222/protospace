@@ -22,7 +22,12 @@ class Prototype < ActiveRecord::Base
   def update_images(image_params)
     i = 0
     image_params.each do |key, value|
-      key != "0" ? images[i].update(image: value[:sub], status: "sub") : images[0].update(image: value[:main], status: "main")
+      if key != "0"
+          images[i].update(image: value[:sub], status: "sub")
+      else
+        images[0].update(image: value[:main], status: "main")
+        images.create(image: value[:sub], status: "sub") if value.has_key?(:sub)
+      end
       i += 1
     end
   end
@@ -31,3 +36,4 @@ class Prototype < ActiveRecord::Base
     likes.find_by(user_id: current_user.id).blank?
   end
 end
+
