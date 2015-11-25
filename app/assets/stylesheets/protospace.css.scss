@@ -594,3 +594,39 @@ body {
     }
   }
 }
+
+.tags-list {
+  h2 {
+    font-weight: 100;
+    margin-bottom: 20px;
+  }
+  ul {
+    overflow: hidden;
+    padding: 0;
+    margin: 30px 0;
+    li {
+      list-style: none;
+      margin-bottom: 10px;
+      a {
+        display:block;
+        text-align:left;
+        padding:20px;
+        border-radius:3px;
+      }
+      a:hover {
+        background-color:#fff;
+        box-shadow:0 0 10px;
+      }
+    }
+  }
+}
+
+footer {
+  p {
+    text-align: center;
+  }
+}
+input.view_tag {
+  padding-left: 10px;
+}
+
