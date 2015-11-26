@@ -1,18 +1,18 @@
 $(function(){
-  add_form();
-  preview_main_form();
-  preview_new_sub_form();
-  preview_edit_sub_form();
+  addForm();
+  previewMainForm();
+  previewNewSubForm();
+  previewEditSubForm();
 });
 
-function add_form() {
+function addForm() {
   $('li.plus').on('click', function() {
     $('li.hidden_form').removeClass('hidden_form');
     $(this).addClass('hidden_form');
   });
 };
 
-function preview_main_form() {
+function previewMainForm() {
   $('#prototype_images_attributes_0_main').change(
       function() {
           if ( !this.files.length ) {
@@ -28,7 +28,7 @@ function preview_main_form() {
   );
 };
 
-function preview_new_sub_form() {
+function previewNewSubForm() {
   for(var i = 0; i <= 2; i++){
     $('#prototype_images_attributes_0_sub'+ i).change(function(){
       if(!this.files.length){
@@ -45,7 +45,7 @@ function preview_new_sub_form() {
   }
 }
 
-function preview_edit_sub_form() {
+function previewEditSubForm() {
   for(var i = 0; i <= 2; i++){
     $('#prototype_images_attributes_'+i+'_sub').change(function(){
       if(!this.files.length){
