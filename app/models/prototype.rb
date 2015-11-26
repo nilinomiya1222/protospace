@@ -15,18 +15,18 @@ class Prototype < ActiveRecord::Base
 
   def create_images(image_params)
     image_params.each do |key, value|
-      key == "main" ? images.create(image: value, status: "main") : images.create(image: value, status: "sub")
+      key == 'main' ? images.create(image: value, status: 'main') : images.create(image: value, status: 'sub')
     end
   end
 
   def update_images(image_params)
     i = 0
     image_params.each do |key, value|
-      if key != "0"
-          images[i].update(image: value[:sub], status: "sub")
+      if key != '0'
+          images[i].update(image: value[:sub], status: 'sub')
       else
-        images[0].update(image: value[:main], status: "main")
-        images.create(image: value[:sub], status: "sub") if value.has_key?(:sub)
+        images[0].update(image: value[:main], status: 'main')
+        images.create(image: value[:sub], status: 'sub') if value.has_key?(:sub)
       end
       i += 1
     end
