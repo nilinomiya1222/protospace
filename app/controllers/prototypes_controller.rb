@@ -15,7 +15,7 @@ class PrototypesController < ApplicationController
   end
 
   def create
-    @prototype = current_user.prototypes.create(prototype_params)
+    @prototype = current_user.prototypes.new(prototype_params)
     @prototype.save ? (redirect_to :root, success: 'プロトタイプが投稿されました') : (render :new, error: '投稿に失敗しました')
   end
 
