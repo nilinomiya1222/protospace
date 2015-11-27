@@ -16,12 +16,12 @@
         = render partial: 'likes/like'
   .row
     .col-md-9
-      = image_tag @prototype.images[0].image.url, class: 'img-responsive'
+      = image_tag @prototype.images[0].content.url, class: 'img-responsive'
     .col-md-3
       %ul.proto-sub-list.list-group
         - @prototype.images.sub.each do |proto_image|
           %li.list-group-item
-            = image_tag proto_image.image.url, class: 'img-responsive'
+            = image_tag proto_image.content.url, class: 'img-responsive'
   .row.proto-description
     .col-md-3
       %h4 Catch Copy

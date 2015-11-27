@@ -8,7 +8,7 @@ class Prototype < ActiveRecord::Base
 
   acts_as_taggable
 
-  accepts_nested_attributes_for :images, reject_if: proc { |attributes| attributes['image'].blank? }
+  accepts_nested_attributes_for :images, reject_if: proc { |attributes| attributes['content'].blank? }
 
   #Default Paginatiton
   paginates_per 8
