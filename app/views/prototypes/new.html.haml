@@ -21,7 +21,7 @@
                         = images_form.hidden_field :status, value: 'sub'
                         = image_tag (), class: 'sub_image#{i}_preview'
                 = f.fields_for :images do |images_form|
-                  %li.list-group-item.col-md-4.hidden_form
+                  %li.list-group-item.col-md-4#hidden_form
                     .image-upload
                       = images_form.file_field :content
                       = images_form.hidden_field :status, value: 'sub'

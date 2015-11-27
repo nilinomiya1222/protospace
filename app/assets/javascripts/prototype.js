@@ -6,8 +6,8 @@ $(function(){
 
 function addForm() {
   $('li.plus').on('click', function() {
-    $('li.hidden_form').removeClass('hidden_form');
-    $(this).addClass('hidden_form');
+    $('li#hidden_form').attr('id', "");
+    $(this).attr('id', 'hidden_form');
   });
 };
 
