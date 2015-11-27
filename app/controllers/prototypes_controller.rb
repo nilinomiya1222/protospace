@@ -15,7 +15,7 @@ class PrototypesController < ApplicationController
   end
 
   def create
-    @prototype = Prototype.create(prototype_params)
+    @prototype = current_user.prototypes.create(prototype_params)
     @prototype.save ? (redirect_to :root, success: 'プロトタイプが投稿されました') : (render :new, error: '投稿に失敗しました')
   end
 
@@ -49,6 +49,6 @@ class PrototypesController < ApplicationController
 
   private
   def prototype_params
-    params.require(:prototype).permit(:name, :copy, :concept, images_attributes:[:id,:content, :status]).merge(user_id: current_user.id, tag_list: params[:prototype][:tag])
+    params.require(:prototype).permit(:name, :copy, :concept, images_attributes:[:id,:content, :status]).merge(tag_list: params[:prototype][:tag])
   end
 end
