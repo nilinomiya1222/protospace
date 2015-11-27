@@ -19,11 +19,11 @@ function previewMainForm() {
           return;
       }else{
       let file = $(this).prop('files')[0];
-      const FILEREADER = new FileReader();
-        FILEREADER.onload = function() {
-          $('.main_image_preview').attr('src', FILEREADER.result ).css('display','inline');
+      const fileReader = new FileReader();
+        fileReader.onload = function() {
+          $('.main_image_preview').attr('src', fileReader.result ).css('display','inline');
         }
-      FILEREADER.readAsDataURL(file);
+      fileReader.readAsDataURL(file);
       }
     }
   );
@@ -38,11 +38,11 @@ function previewSubForm() {
       }else{
         let num = $(this).attr('id').charAt($(this).attr('id').search(/[1-9]/));
         let file = $(this).prop('files')[0];
-        const FILEREADER = new FileReader();
-        FILEREADER.onload = function(){
-          $('.sub_image' + num + '_preview' ).attr('src', FILEREADER.result).css('display', 'inline');
+        const fileReader = new FileReader();
+        fileReader.onload = function(){
+          $('.sub_image' + num + '_preview' ).attr('src', fileReader.result).css('display', 'inline');
         }
-        FILEREADER.readAsDataURL(file);
+        fileReader.readAsDataURL(file);
       };
     })
   }
