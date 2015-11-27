@@ -8,25 +8,27 @@
         .col-md-12
           = f.fields_for :images do |images_form|
             .cover-image-upload
-              = images_form.file_field :main
+              = images_form.file_field :content
+              = images_form.hidden_field :status, value: 'main'
               = image_tag (), class: 'main_image_preview'
             .col-md-12
               %ul.proto-sub-list.list-group
-                %li.list-group-item.col-md-4
-                  .image-upload
-                    = images_form.file_field :sub1
-                    = image_tag (), class: 'sub_image1_preview'
-                %li.list-group-item.col-md-4
-                  .image-upload
-                    = images_form.file_field :sub2
-                    = image_tag (), class: 'sub_image2_preview'
-                %li.list-group-item.col-md-4.hidden_form
-                  .image-upload
-                    = images_form.file_field :sub3
-                    = image_tag (), class: 'sub_image3_preview'
-                %li.list-group-item.col-md-4.plus
-                  .image-upload-plus
-                    %span +
+                - 2.times do |i|
+                  = f.fields_for :images do |images_form|
+                    %li.list-group-item.col-md-4
+                      .image-upload
+                        = images_form.file_field :content
+                        = images_form.hidden_field :status, value: 'sub'
+                        = image_tag (), class: 'sub_image#{i}_preview'
+                = f.fields_for :images do |images_form|
+                  %li.list-group-item.col-md-4.hidden_form
+                    .image-upload
+                      = images_form.file_field :content
+                      = images_form.hidden_field :status, value: 'sub'
+                      = image_tag (), class: 'sub_image3_preview'
+                  %li.list-group-item.col-md-4.plus
+                    .image-upload-plus
+                      %span +
       .row.proto-description
         .col-md-12
           = f.text_field :copy, placeholder: 'Catch Copy'
