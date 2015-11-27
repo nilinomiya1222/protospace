@@ -1,3 +1,4 @@
+"use strict";
 $(function(){
   addForm();
   previewMainForm();
@@ -12,7 +13,6 @@ function addForm() {
 };
 
 function previewMainForm() {
-  "use strict"
   $('#prototype_images_attributes_0_content').change(
     function() {
       if ( !this.files.length ) {
@@ -30,7 +30,6 @@ function previewMainForm() {
 };
 
 function previewSubForm() {
-  "use strict";
   for(let i = 1; i <= 3; i++){
     $('#prototype_images_attributes_' + i + '_content').change(function(){
       if(!this.files.length){
