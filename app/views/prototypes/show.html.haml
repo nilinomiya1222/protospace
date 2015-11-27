@@ -16,7 +16,7 @@
         = render partial: 'likes/like'
   .row
     .col-md-9
-      = image_tag @prototype.thumbnails[0].content.url, class: 'img-responsive'
+      = image_tag main_image(@prototype), class: 'img-responsive'
     .col-md-3
       %ul.proto-sub-list.list-group
         - @prototype.thumbnails.sub.each do |proto_thumbnails|
