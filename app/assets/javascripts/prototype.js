@@ -17,29 +17,29 @@ function previewMainForm() {
           if ( !this.files.length ) {
               return;
           }
-          var file = $(this).prop('files')[0];
-          var fr = new FileReader();
-          fr.onload = function() {
-              $('.main_image_preview').attr('src', fr.result ).css('display','inline');
+          let file = $(this).prop('files')[0];
+          const FileReader = new FileReader();
+          FileReader.onload = function() {
+              $('.main_image_preview').attr('src', FileReader.result ).css('display','inline');
           }
-          fr.readAsDataURL(file);
+          FileReader.readAsDataURL(file);
       }
   );
 };
 
 function previewSubForm() {
-  for(var i = 1; i <= 3; i++){
+  for(let i = 1; i <= 3; i++){
     $('#prototype_images_attributes_' + i + '_content').change(function(){
       if(!this.files.length){
         return;
       }
-      var num = $(this).attr('id').charAt($(this).attr('id').search(/[1-9]/));
-      var file = $(this).prop('files')[0];
-      var fr = new FileReader();
-      fr.onload = function(){
-        $('.sub_image' + num + '_preview' ).attr('src', fr.result).css('display', 'inline');
+      let num = $(this).attr('id').charAt($(this).attr('id').search(/[1-9]/));
+      let file = $(this).prop('files')[0];
+      const FileReader = new FileReader();
+      FileReader.onload = function(){
+        $('.sub_image' + num + '_preview' ).attr('src', FileReader.result).css('display', 'inline');
       }
-      fr.readAsDataURL(file);
+      FileReader.readAsDataURL(file);
     });
   }
 }
