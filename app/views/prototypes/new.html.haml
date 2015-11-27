@@ -6,25 +6,25 @@
           = f.text_field :name, autofocus: true, placeholder: 'Title', class: 'proto-new-title'
       .row
         .col-md-12
-          = f.fields_for :images do |images_form|
+          = f.fields_for :thumbnails do |thumbnails_form|
             .cover-image-upload
-              = images_form.file_field :content
-              = images_form.hidden_field :status, value: 'main'
+              = thumbnails_form.file_field :content
+              = thumbnails_form.hidden_field :status, value: 'main'
               = image_tag (), class: 'main_image_preview'
             .col-md-12
               %ul.proto-sub-list.list-group
                 - 2.times do |i|
-                  = f.fields_for :images do |images_form|
+                  = f.fields_for :thumbnails do |thumbnails_form|
                     %li.list-group-item.col-md-4
                       .image-upload
-                        = images_form.file_field :content
-                        = images_form.hidden_field :status, value: 'sub'
+                        = thumbnails_form.file_field :content
+                        = thumbnails_form.hidden_field :status, value: 'sub'
                         = image_tag (), class: "sub_image#{i+1}_preview"
-                = f.fields_for :images do |images_form|
+                = f.fields_for :thumbnails do |thumbnails_form|
                   %li.list-group-item.col-md-4#hidden_form
                     .image-upload
-                      = images_form.file_field :content
-                      = images_form.hidden_field :status, value: 'sub'
+                      = thumbnails_form.file_field :content
+                      = thumbnails_form.hidden_field :status, value: 'sub'
                       = image_tag (), class: 'sub_image3_preview'
                   %li.list-group-item.col-md-4.plus
                     .image-upload-plus

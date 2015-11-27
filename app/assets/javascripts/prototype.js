@@ -13,7 +13,7 @@ function addForm() {
 };
 
 function previewMainForm() {
-  $('#prototype_images_attributes_0_content').change(
+  $('#prototype_thumbnails_attributes_0_content').change(
     function() {
       if ( !this.files.length ) {
           return;
@@ -31,7 +31,7 @@ function previewMainForm() {
 
 function previewSubForm() {
   for(let i = 1; i <= 3; i++){
-    $('#prototype_images_attributes_' + i + '_content').change(function(){
+    $('#prototype_thumbnails_attributes_' + i + '_content').change(function(){
       if(!this.files.length){
         return;
       }else{

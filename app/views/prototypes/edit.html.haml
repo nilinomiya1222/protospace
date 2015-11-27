@@ -5,29 +5,29 @@
         .col-md-12
           = f.text_field :name, autofocus: true, placeholder: 'Title', class: 'proto-new-title'
       .row
-        = f.fields_for :images, @prototype.images.main do |images_form|
+        = f.fields_for :thumbnails, @prototype.thumbnails.main do |thumbnails_form|
           .col-md-12
             .cover-image-upload
-              = images_form.file_field :content
-              = images_form.hidden_field :status, value: 'main'
-              = image_tag(@prototype.images[0].content.url, class: 'main_image_preview')
+              = thumbnails_form.file_field :content
+              = thumbnails_form.hidden_field :status, value: 'main'
+              = image_tag(@prototype.thumbnails[0].content.url, class: 'main_image_preview')
           .col-md-12
             %ul.proto-sub-list.list-group
-              - @prototype.images.sub.each_with_index do |img, i|
-                = f.fields_for :images, img do |images_form|
+              - @prototype.thumbnails.sub.each_with_index do |img, i|
+                = f.fields_for :thumbnails, img do |thumbnails_form|
                   %li.list-group-item.col-md-4
                     .image-upload
-                      = images_form.file_field :content
-                      = images_form.hidden_field :status, value: 'sub'
+                      = thumbnails_form.file_field :content
+                      = thumbnails_form.hidden_field :status, value: 'sub'
                       = image_tag(img.content.url, class: "sub_image#{i+1}_preview")
               %li.list-group-item.col-md-4.plus
                 .image-upload-plus
                   %span +
                 %li.list-group-item.col-md-4#hidden_form
                   .image-upload
-                    = f.fields_for :images, @prototype.images.sub do |images_form|
-                      = images_form.file_field :content
-                      = images_form.hidden_field :status, value: 'sub'
+                    = f.fields_for :thumbnails, @prototype.thumbnails.sub do |thumbnails_form|
+                      = thumbnails_form.file_field :content
+                      = thumbnails_form.hidden_field :status, value: 'sub'
                       = image_tag (), class: 'plus_form sub_image3_preview'
       .row.proto-description
         .col-md-12

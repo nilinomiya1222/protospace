@@ -11,7 +11,7 @@ class PrototypesController < ApplicationController
 
   def new
     @prototype = Prototype.new
-    @prototype.images.build
+    @prototype.thumbnails.build
   end
 
   def create
@@ -49,6 +49,6 @@ class PrototypesController < ApplicationController
 
   private
   def prototype_params
-    params.require(:prototype).permit(:name, :copy, :concept, images_attributes:[:id,:content, :status]).merge(tag_list: params[:prototype][:tag])
+    params.require(:prototype).permit(:name, :copy, :concept, thumbnails_attributes:[:id,:content, :status]).merge(tag_list: params[:prototype][:tag])
   end
 end
