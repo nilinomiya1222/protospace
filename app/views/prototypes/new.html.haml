@@ -21,7 +21,7 @@
                         = thumbnails_form.hidden_field :status, value: 'sub'
                         = image_tag (), class: "image#{i+1}_preview"
                 = f.fields_for :thumbnails do |thumbnails_form|
-                  %li.list-group-item.col-md-4#hidden_form
+                  %li.list-group-item.col-md-4#hide
                     .image-upload
                       = thumbnails_form.file_field :content
                       = thumbnails_form.hidden_field :status, value: 'sub'

@@ -23,7 +23,7 @@
               %li.list-group-item.col-md-4.plus
                 .image-upload-plus
                   %span +
-                %li.list-group-item.col-md-4#hidden_form
+                %li.list-group-item.col-md-4#hide
                   .image-upload
                     = f.fields_for :thumbnails, @prototype.thumbnails.sub do |thumbnails_form|
                       = thumbnails_form.file_field :content
