@@ -6,20 +6,29 @@
           = f.text_field :name, autofocus: true, placeholder: 'Title', class: 'proto-new-title'
       .row
         .col-md-12
-          = f.fields_for :images do |images_form|
+          = f.fields_for :thumbnails do |thumbnails_form|
             .cover-image-upload
-              = images_form.file_field :main
+              = thumbnails_form.file_field :content
+              = thumbnails_form.hidden_field :status, value: 'main'
+              = image_tag (), class: 'image0_preview'
             .col-md-12
               %ul.proto-sub-list.list-group
-                %li.list-group-item.col-md-4
-                  .image-upload
-                    = images_form.file_field :sub
-                %li.list-group-item.col-md-4
-                  .image-upload
-                    = images_form.file_field :sub1
-                %li.list-group-item.col-md-4
-                  .image-upload-plus
-                    %span +
+                - 2.times do |i|
+                  = f.fields_for :thumbnails do |thumbnails_form|
+                    %li.list-group-item.col-md-4
+                      .image-upload
+                        = thumbnails_form.file_field :content
+                        = thumbnails_form.hidden_field :status, value: 'sub'
+                        = image_tag (), class: "image#{i+1}_preview"
+                = f.fields_for :thumbnails do |thumbnails_form|
+                  %li.list-group-item.col-md-4#hide
+                    .image-upload
+                      = thumbnails_form.file_field :content
+                      = thumbnails_form.hidden_field :status, value: 'sub'
+                      = image_tag (), class: 'image3_preview'
+                  %li.list-group-item.col-md-4.plus
+                    .image-upload-plus
+                      %span +
       .row.proto-description
         .col-md-12
           = f.text_field :copy, placeholder: 'Catch Copy'
@@ -36,4 +45,4 @@
               = text_field_tag 'prototype[tag][]','' , placeholder: 'Application'
       .row.text-center.proto-btn
         = f.submit 'Publish', class: 'btn btn-lg btn-primary btn-block'
-        
+
