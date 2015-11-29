@@ -6,7 +6,7 @@ $(function(){
 
 function addForm() {
   $('li.plus').on('click', function() {
-    $('li#hide').attr('id', "show");
+    $('li#hide').show();
     $(this).hide();
   });
 };
