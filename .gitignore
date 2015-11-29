@@ -6,7 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
-
+/config/initializers/carrierwave.rb
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
