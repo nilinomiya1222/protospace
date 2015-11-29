@@ -10,7 +10,7 @@
             .cover-image-upload
               = thumbnails_form.file_field :content
               = thumbnails_form.hidden_field :status, value: 'main'
-              = image_tag(main_image(@prototype), class: 'main_image_preview')
+              = image_tag(main_image(@prototype), class: 'image0_preview')
           .col-md-12
             %ul.proto-sub-list.list-group
               - @prototype.thumbnails.sub.each_with_index do |img, i|
@@ -19,7 +19,7 @@
                     .image-upload
                       = thumbnails_form.file_field :content
                       = thumbnails_form.hidden_field :status, value: 'sub'
-                      = image_tag(img.content.url, class: "sub_image#{i+1}_preview")
+                      = image_tag(img.content.url, class: "image#{i+1}_preview")
               %li.list-group-item.col-md-4.plus
                 .image-upload-plus
                   %span +
